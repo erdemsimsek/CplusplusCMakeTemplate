@@ -1,0 +1,4 @@
+
+# Ignoring build directories
+build/*
+debug/*
