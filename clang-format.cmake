@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.10.0)
 
 
+find_program(CLANG_FORMAT clang-format)
+if(CLANG_FORMAT_FOUND)
+    message("clang-format is found in the system")
+else()
+    message("clang-format executable not found")
+endif()
 
 file(GLOB_RECURSE ALL_SOURCE_FILES *.cpp *.h)
 foreach (SOURCE_FILE ${ALL_SOURCE_FILES})
