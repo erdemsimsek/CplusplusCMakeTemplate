@@ -1,5 +1,6 @@
 #include "boost/program_options.hpp"
 #include <iostream>
+#include "version.h"
 
 namespace po = boost::program_options;
 
@@ -24,6 +25,6 @@ int main(int argc, char *argv[]) {
     std::cout << "Compression level was not set.\n";
   }
 
-  int aa[10];
-  aa[100] = 5;
+    std::cout << "Version: " << PROJECT_VERSION_MAJOR << "." << PROJECT_VERSION_MINOR << "." << PROJECT_VERSION_PATCH << "\n";
+
 }

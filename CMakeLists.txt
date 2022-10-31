@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.10.0)
 
 set(PROJECT_NAME "CLI_INTERFACE")
+set(PROJECT_VERSION_MAJOR "1")
+set(PROJECT_VERSION_MINOR "0")
+set(PROJECT_VERSION_PATCH "0")
 
-project(${PROJECT_NAME} VERSION 0.1.0)
+project(${PROJECT_NAME} VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH})
+
+# Auto generated version header file
+configure_file(version.h.in version.h)
+include_directories(${PROJECT_BINARY_DIR})
 
 include(CTest)
 enable_testing()
