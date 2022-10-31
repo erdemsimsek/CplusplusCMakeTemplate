@@ -22,7 +22,12 @@ include(cppcheck.cmake)
 # Adding clang-format rules
 include(clang-format.cmake)
 
+include(clang-tidy.cmake)
+
 add_executable(${PROJECT_NAME} main.cpp)
+
+# set CXX_CLANG_TIDY property after defining the target
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_CLANG_TIDY "${CLANG_TIDY_COMMAND}")
 
 # Lkinking boost libraries with the application
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
